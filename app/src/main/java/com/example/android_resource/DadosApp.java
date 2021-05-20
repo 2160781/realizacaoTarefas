@@ -9,15 +9,15 @@ import java.util.List;
 public class DadosApp {
 
     private List<Receita> listaReceitas;
-    private int posicao;
+    private int passo;
 
 
     // singleton
-    public DadosApp() {
+    public DadosApp(int posicao) {
 
         listaReceitas = new ArrayList<>();
-        listaReceitas.add(new Receita());
-        posicao = 1;
+        listaReceitas.add(new Receita(posicao));
+        passo = 1;
 
 
 
@@ -26,22 +26,22 @@ public class DadosApp {
 
     public String getTextoPassoReceita() {
 
-        return listaReceitas.get(posicao - 1).getTexto();
+        return listaReceitas.get(passo - 1).getTexto();
     }
 
     public void avancar() {
-        if (posicao < listaReceitas.size())
-            posicao++;
+        if (passo < listaReceitas.size())
+            passo++;
 
     }
 
     public void retroceder() {
-        if (posicao > 1)
-            posicao--;
+        if (passo > 1)
+            passo--;
     }
 
     public void marcarFeito() {
-        listaReceitas.get(posicao - 1).marcarFeito();
+        listaReceitas.get(passo - 1).marcarFeito();
     }
 
 

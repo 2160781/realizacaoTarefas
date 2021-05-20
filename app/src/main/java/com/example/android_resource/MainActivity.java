@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                dadosApp = new DadosApp();
+                dadosApp = new DadosApp(position + 1);
 
                 if(position == 0){
                     Intent Tarefa1 = new Intent(view.getContext(),activity_tarefas.class);

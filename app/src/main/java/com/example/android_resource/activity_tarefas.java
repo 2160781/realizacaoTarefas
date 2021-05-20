@@ -15,11 +15,14 @@ public class activity_tarefas extends AppCompatActivity {
     Button boton;
     TextView cajadetexto;
 
+
     private DadosApp dadosApp;
+    private int posicao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        dadosApp = new DadosApp();
+        dadosApp = new DadosApp(posicao);
 
         /* informação da receita */
         super.onCreate(savedInstanceState);
@@ -37,7 +40,7 @@ public class activity_tarefas extends AppCompatActivity {
         int action = event.getAction();
         int keyCode = event.getKeyCode();
         switch (keyCode) {
-            case KeyEvent.KEYCODE_VOLUME_UP:
+            case KeyEvent.KEYCODE_DPAD_RIGHT:
                 if (action == KeyEvent.ACTION_DOWN) {
                     //TODO
 
@@ -46,29 +49,29 @@ public class activity_tarefas extends AppCompatActivity {
 
                     estadoBoton= false;
 
-                    // else{
-                    //         boton.setText("Adios");
-                    //      cajadetexto.setText("Adios");
-                    //    estadoBoton= false;
-                    // }
 
                 }
                 return true;
-            case KeyEvent.KEYCODE_VOLUME_DOWN:
+            case KeyEvent.KEYCODE_DPAD_LEFT:
                 if (action == KeyEvent.ACTION_DOWN) {
                     //TODO
-                    //if (estadoBoton==true){
+
                     dadosApp.retroceder();
                     cajadetexto.setText(dadosApp.getTextoPassoReceita());
                     estadoBoton= false;
-                    //  }else{
 
-                    //    boton.setText("Hola");
-                    //  cajadetexto.setText("Hola");
-                    //estadoBoton= false;
                 }
-
                 return true;
+            case KeyEvent.KEYCODE_DPAD_UP:
+                if (action == KeyEvent.ACTION_DOWN) {
+
+
+
+                    estadoBoton= false;
+
+                }
+                return true;
+
             case KeyEvent.KEYCODE_ENTER:
                 if (action == KeyEvent.ACTION_DOWN) {
                     estadoBoton= false;
@@ -76,6 +79,7 @@ public class activity_tarefas extends AppCompatActivity {
                     Intent inicio = new Intent(this,MainActivity.class);
                     startActivity(inicio);
                 }
+
             default:
                 return super.dispatchKeyEvent(event);
         }
