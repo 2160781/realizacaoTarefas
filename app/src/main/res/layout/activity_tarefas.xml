@@ -26,15 +26,5 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="29dp" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="230dp"
-        android:layout_height="137dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/ingredientesbolo" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

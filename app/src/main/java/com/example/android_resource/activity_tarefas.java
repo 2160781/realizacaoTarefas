@@ -14,7 +14,6 @@ public class activity_tarefas extends AppCompatActivity {
     boolean estadoBoton;
     Button boton;
     TextView cajadetexto;
-    ImageView ver_imagen;
 
     private DadosApp dadosApp;
 
@@ -29,7 +28,7 @@ public class activity_tarefas extends AppCompatActivity {
         boton=findViewById(R.id.Button);
         cajadetexto= findViewById(R.id.textView);
         cajadetexto.setText(dadosApp.getTextoPassoReceita());
-        ver_imagen=findViewById(R.id.imageView);
+
     }
 
     //Metodos
@@ -41,9 +40,6 @@ public class activity_tarefas extends AppCompatActivity {
             case KeyEvent.KEYCODE_VOLUME_UP:
                 if (action == KeyEvent.ACTION_DOWN) {
                     //TODO
-
-                    //   if (estadoBoton==true){
-                    ver_imagen.setImageResource(R.drawable.image);
 
                     dadosApp.avancar();
                     cajadetexto.setText(dadosApp.getTextoPassoReceita());
@@ -64,8 +60,6 @@ public class activity_tarefas extends AppCompatActivity {
                     //if (estadoBoton==true){
                     dadosApp.retroceder();
                     cajadetexto.setText(dadosApp.getTextoPassoReceita());
-                    ver_imagen.setImageResource(R.drawable.estg_h_01);
-
                     estadoBoton= false;
                     //  }else{
 
